@@ -15,3 +15,5 @@ Si desea registrar un nuevo usuario puede hacerlo pero no se registrará con per
 Las preguntas ya vienen registradas y relacionadas con sus categorías. Si lo desea puede editar los nombres de las categorías, las preguntas y registrar nuevas preguntas. 
 
 La aplicación se probó con XAMPP Version: 8.0.3
+El gestor de base de datos que se uso en el desarrollo es PhpMyAdmin
+EL lenguaje de programación es PHP
