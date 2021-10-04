@@ -1,5 +1,5 @@
 Concurso Sofka
-Se sube proyecto de concurso de preguntas Sofka el cual consta de:
+- Se sube proyecto de concurso de preguntas Sofka el cual consta de:
 - Código de desarrollo
 - Base de datos poblada con datos
 La base de datos esta poblada con 36 preguntas, 5 categorias y dos usuarios.
@@ -16,4 +16,5 @@ Las preguntas ya vienen registradas y relacionadas con sus categorías. Si lo de
 
 - La aplicación se probó con XAMPP Version: 8.0.3.
 - El gestor de base de datos que se uso en el desarrollo es PhpMyAdmin.
+- El nombre de la base de datos es: concursosofka, el usuario de la base de datos es: root. El archivo de conexión cuenta con estas especificaciones. El usuario root NO tiene contraseña 
 - El lenguaje de programación es PHP.
