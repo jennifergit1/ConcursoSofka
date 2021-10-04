@@ -1,6 +1,7 @@
 <?php
 require_once("../Modelo/conexion.php");
 require_once("../Modelo/login.php");
+        session_start();
 
 $loginModel = new loginModel();
 
@@ -12,7 +13,6 @@ if (isset($_POST["iniciarSesion"])) {
     $loginExitoso = $loginModel->iniciarSesion();
 
     if (count($loginExitoso) > 0) {
-        session_start();
         $_SESSION["idUsuario"] = $loginExitoso["idUsuario"];
         $_SESSION["nombreUsuario"] = $loginExitoso["nombreUsuario"];
         $_SESSION["correo"] = $loginExitoso["correo"];
@@ -26,5 +26,11 @@ if (isset($_POST["iniciarSesion"])) {
     } else {
         echo '<script language="javascript">alert("usuario o contraseña incorrecta");</script>';
         echo '<script> window.location="../Vista/login.php"</script>';
+    }
+}else{
+    if(isset($_SESSION["idUsuario"])){
+        header("Location: ../Vista/inicio.php");
+    }else{
+        header("Location: ../Vista/login.php");
     }
 }

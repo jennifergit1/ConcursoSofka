@@ -18,6 +18,9 @@ if (isset($_POST["enviarPregunta"])) {
     echo $correcta . "<br>";
     if ($correcta == 1) {
         if ($_SESSION["numCategoria"] >= 5 && count($_SESSION["preguntasMostradas"]) >= 5) {
+            $categoriasModel->setIdCategoria($_SESSION["numCategoria"]);
+            $puntos = $categoriasModel->obtenerPuntosCategoria();
+            $_SESSION["puntosActuales"] += $puntos;
             $usuariosModel->setIdUsuario($_SESSION["idUsuario"]);
             $usuariosModel->setPuntosUsuario($_SESSION["puntosActuales"]);
             $respuesta = $usuariosModel->acumularPuntos(); 
@@ -50,4 +53,10 @@ if (isset($_POST["enviarPregunta"])) {
     $respuesta = $usuariosModel->acumularPuntos(); 
     echo "<script>alert('Decidiste terminar el juego, se te acumularán ".$_SESSION["puntosActuales"]." puntos.');</script>";
     echo "<script>window.location.href='../Vista/iniciarJuego.php';</script>";
+}else{
+    if(isset($_SESSION["idUsuario"])){
+        header("Location: ../Vista/inicio.php");
+    }else{
+        header("Location: ../Vista/login.php");
+    }
 }

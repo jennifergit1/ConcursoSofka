@@ -3,6 +3,7 @@ require_once("../Modelo/conexion.php");
 require_once("../Modelo/preguntas.php");
 require_once("../Modelo/respuestas.php");
 require_once("../Modelo/categorias.php");
+session_start();
 
 $preguntasModel = new preguntasModel();
 $respuestasModel = new respuestasModel();
@@ -56,5 +57,11 @@ if (isset($_POST["registrarPregunta"])) {
     } else {
         echo '<script language="javascript">alert("Error");</script>';
         echo '<script> window.location="../Vista/listarCategorias.php"</script>';
+    }
+}else{
+    if(isset($_SESSION["idUsuario"])){
+        header("Location: ../Vista/inicio.php");
+    }else{
+        header("Location: ../Vista/login.php");
     }
 }

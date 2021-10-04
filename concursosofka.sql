@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2021 a las 20:33:54
+-- Tiempo de generación: 04-10-2021 a las 03:43:58
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -94,7 +94,7 @@ INSERT INTO `preguntas` (`idPregunta`, `idCategoria`, `pregunta`, `numPregunta`)
 (30, 5, '¿Resultado de 2(1/2)(1+1)?', 1),
 (31, 5, '¿Resultado de 2(10/2) (5+5)?', 2),
 (32, 5, '¿Resultado de 4(2/2)(1/0)?', 3),
-(33, 5, '¿Resultado de 4(2/2)(1/0)?', 4),
+(33, 5, '¿Resultado de 4(2/2)(0/1)?', 4),
 (34, 5, '¿Resultado de 6(2+2)(-1+5-4)?', 5),
 (35, 5, '¿Resultado de 1^120', 6),
 (36, 5, '¿Resultado de 0^2?', 7);
@@ -229,10 +229,10 @@ INSERT INTO `respuestas` (`idRespuesta`, `idPregunta`, `respuesta`, `correcta`) 
 (110, 28, '6', 0),
 (111, 28, 'Indeterminado', 0),
 (112, 28, 'Ninguna es correcta', 0),
-(113, 29, '24', 1),
+(113, 29, '24', 0),
 (114, 29, '16', 0),
 (115, 29, '8', 0),
-(116, 29, 'Ninguna es correcta', 0),
+(116, 29, '32', 1),
 (117, 30, '1', 0),
 (118, 30, '2', 1),
 (119, 30, '0', 0),

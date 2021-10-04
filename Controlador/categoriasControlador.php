@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../Modelo/conexion.php");
 require_once("../Modelo/categorias.php");
 
@@ -17,6 +18,12 @@ if(isset($_POST["editarCategoria"])){
     }else{
         echo '<script language="javascript">alert("Ha ocurrido un error");</script>';
         echo '<script> window.location="../Vista/listarCategorias.php"</script>';
+    }
+}else{
+    if(isset($_SESSION["idUsuario"])){
+        header("Location: ../Vista/inicio.php");
+    }else{
+        header("Location: ../Vista/login.php");
     }
 }
 
